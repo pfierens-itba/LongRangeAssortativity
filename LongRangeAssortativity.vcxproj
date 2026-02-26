@@ -147,6 +147,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ProcessDataSets\ProcessDataSets.py" />
+    <None Include="processeddatasets\cora_feat.bin" />
+    <None Include="processeddatasets\deezer-feat-HR.bin" />
+    <None Include="processeddatasets\deezer-feat-HU.bin" />
+    <None Include="processeddatasets\deezer-feat-RO.bin" />
+    <None Include="processeddatasets\HR_edges.csv" />
+    <None Include="processeddatasets\HU_edges.csv" />
+    <None Include="processeddatasets\pubmed_feat.bin" />
+    <None Include="processeddatasets\RO_edges.csv" />
     <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +169,10 @@
     <ClInclude Include="src\similaritydeezer.hpp" />
     <ClInclude Include="src\similaritydegree.hpp" />
     <ClInclude Include="src\similaritypubmed.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="processeddatasets\cora_edges.txt" />
+    <Text Include="processeddatasets\pubmed_edges.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
