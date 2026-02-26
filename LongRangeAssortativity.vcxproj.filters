@@ -54,21 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg.json" />
-    <None Include="processeddatasets\pubmed_feat.bin">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="processeddatasets\cora_feat.bin">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="processeddatasets\deezer_feat-HR.bin">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="processeddatasets\deezer_feat-HU.bin">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="processeddatasets\deezer_feat-RO.bin">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="ProcessDataSets\ProcessDataSets.py" />
   </ItemGroup>
   <ItemGroup>
@@ -105,12 +90,5 @@
     <ClInclude Include="src\similaritypubmed.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="processeddatasets\cora_edges.txt" />
-    <Text Include="processeddatasets\deezer_edges-HR.txt" />
-    <Text Include="processeddatasets\deezer_edges-HU.txt" />
-    <Text Include="processeddatasets\deezer_edges-RO.txt" />
-    <Text Include="processeddatasets\pubmed_edges.txt" />
   </ItemGroup>
 </Project>

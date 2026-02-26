@@ -1,4 +1,28 @@
 # -*- coding: utf-8 -*-
+# Copyright (c) 2026 Pablo Ignacio Fierens
+# Licensed under the MIT License (see LICENSE.txt)
+#
+# This file contains functions adapted from GitHub repo jcatw/scnn 
+# originally licensed under the MIT License:
+# Copyright (c) 2016 James Atwood,
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 import json
 import networkx as nx
@@ -51,9 +75,9 @@ def parse_deezer(file1,file2,file3):
         print(f"Error: Failed to decode JSON from the file: {e}")
         
     return G, feat
-G, feat = parse_deezer("HR_edges.csv","HR_genres.json","deezer-feat-HR.bin")
-G, feat = parse_deezer("HU_edges.csv","HU_genres.json","deezer-feat-HU.bin")
-G, feat = parse_deezer("RO_edges.csv","RO_genres.json","deezer-feat-RO.bin")
+G, feat = parse_deezer("./Gemsec-Deezer/HR_edges.csv","./Gemsec-Deezer/HR_genres.json","./../processeddatasets/deezer-feat-HR.bin")
+G, feat = parse_deezer("./Gemsec-Deezer/HU_edges.csv","./Gemsec-Deezer/HU_genres.json","./../processeddatasets/deezer-feat-HU.bin")
+G, feat = parse_deezer("./Gemsec-Deezer/RO_edges.csv","./Gemsec-Deezer/RO_genres.json","./../processeddatasets/deezer-feat-RO.bin")
 
 
 #%%
@@ -76,7 +100,7 @@ def parse_pubmed():
     index_to_paper = {}
     
     # parse nodes
-    with open('Pubmed-Diabetes.NODE.paper.tab','r') as node_file:
+    with open('./PubMed/Pubmed-Diabetes.NODE.paper.tab','r') as node_file:
         # first two lines are headers
         node_file.readline()
         node_file.readline()
@@ -113,7 +137,7 @@ def parse_pubmed():
     # parse graph
     # data_A = np.zeros((n_nodes, n_nodes), dtype='float')    
     diff = 0
-    with open('Pubmed-Diabetes.DIRECTED.cites.tab','r') as edge_file:
+    with open('./PubMed/Pubmed-Diabetes.DIRECTED.cites.tab','r') as edge_file:
         # first two lines are headers
         edge_file.readline()
         edge_file.readline()
@@ -143,8 +167,8 @@ def parse_pubmed():
 
 G = parse_pubmed()
         
-nx.write_edgelist(G, 'pubmed_edges.txt', data = False)
-with open('pubmed_feat.bin', 'wb') as f:
+nx.write_edgelist(G, './../processeddatasets/pubmed_edges.txt', data = False)
+with open('./../processeddatasets/pubmed_feat.bin', 'wb') as f:
     for n in G.nodes:
         ff = G.nodes[n]['features']
         for k in range(500):
@@ -171,7 +195,7 @@ def parse_cora(plot=False):
     features = []
     labels = []
  
-    with open('cora.content', 'r') as f:
+    with open('./Cora/cora.content', 'r') as f:
         i = 0
         # for line in f.xreadlines():
         for line in f.readlines():
@@ -197,7 +221,7 @@ def parse_cora(plot=False):
  
     # n_papers = len(id2index)
     # adj = np.zeros((n_papers, n_papers), dtype='float32') 
-    with open('cora.cites', 'r') as f:
+    with open('./Cora/cora.cites', 'r') as f:
         # for line in f.xreadlines():
         for line in f.readlines():
             items = line.strip().split('\t')
@@ -213,8 +237,8 @@ def parse_cora(plot=False):
 G,labels,features = parse_cora()
 
 
-nx.write_edgelist(G, 'cora_edges.txt', data=False)
-with open('cora_feat.bin','wb') as f:
+nx.write_edgelist(G, './../processeddatasets/cora_edges.txt', data=False)
+with open('./../processeddatasets/cora_feat.bin','wb') as f:
     for n in range(len(G.nodes)):
         for k in range(features[n].shape[0]):
             f.write(int(features[n,k]).to_bytes(1))
