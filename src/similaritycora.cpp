@@ -1,0 +1,45 @@
+/*
+ * Copyright (c) 2026 Pablo Ignacio Fierens
+ *
+ * This source code is licensed under the MIT License.
+ *
+ * IMPORTANT: This file links against the igraph C library, which is
+ * licensed under the GNU General Public License (GPL) v2 or later.
+ * As a result, any compiled binary or derivative work that includes
+ * igraph must be distributed under the terms of the GPL.
+ */
+
+#include <igraph/igraph.h>
+#include <stdio.h>
+#include <intrin.h>
+#include <stdint.h>
+#include <stdlib.h> // Include stdlib.h for malloc and free
+#include <string.h>
+#include <immintrin.h>  // AVX2 intrinsics
+#include <omp.h>
+#include "generalsettings.hpp"
+#include "similarity.hpp"
+#include "similaritycora.hpp"
+
+static inline double similarity(const featcora a, const featcora b) {
+    int i;
+	int numerator = 0;
+    double sim = 0.0;
+    for (i = 0; i < 1433; i++) {
+        if (a.f[i] != b.f[i]) {
+			numerator++;
+        }
+    }
+	sim = 1.0 - ((double)numerator / 1433.0);
+    
+    return sim;
+}
+
+void cacheSimilarityCora(double* simRow, void* features, igraph_integer_t N, igraph_integer_t n) {
+    igraph_integer_t m;
+    featcora featureN = ((featcora*) features)[n];
+    for (m = n + 1; m < N; m++) {
+        featcora featureM = ((featcora*)features)[m];
+        simRow[m] = similarity(featureN, featureM);
+    }
+}
