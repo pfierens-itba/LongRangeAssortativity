@@ -66,6 +66,7 @@
     <None Include="processeddatasets\deezer_feat-RO.bin">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="ProcessDataSets\ProcessDataSets.py" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\assortativitycalc.hpp">
