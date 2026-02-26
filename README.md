@@ -1,4 +1,4 @@
-# LongRangeAssortativity
+# Long Range Assortativity
 
 Under Window 11 and Visual Studio 2022, you can set up the LongRangeAssortativity project with the following steps:
 
