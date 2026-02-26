@@ -1,0 +1,1 @@
+void cacheSimilarityDegree(double* simRow, void* features, igraph_integer_t N, igraph_integer_t n);

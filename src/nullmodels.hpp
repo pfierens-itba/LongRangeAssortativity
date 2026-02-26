@@ -1,0 +1,1 @@
+int computeNullModel(igraph_t* graph, double** simMatrix, igraph_integer_t N, double meanSim[], double meanSqSim[]);

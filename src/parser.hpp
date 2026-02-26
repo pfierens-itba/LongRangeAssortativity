@@ -1,0 +1,2 @@
+int parse(igraph_t* graph, double**& simMatrix, size_t sizeoffeat, void (*cacheSimilarity)(double*, void*, igraph_integer_t, igraph_integer_t), const char* filename1, const char* filename2);
+int parserClean(igraph_t* graph, double**& simMatrix);
