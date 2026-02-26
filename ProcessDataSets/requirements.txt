@@ -1,0 +1,3 @@
+# Python dependencies for research reproducibility
+networkx==3.6.1
+numpy==2.3.5

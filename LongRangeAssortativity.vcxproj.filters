@@ -73,6 +73,7 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="processeddatasets\RO_edges.csv" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\assortativitycalc.hpp">

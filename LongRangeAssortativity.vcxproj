@@ -155,6 +155,7 @@
     <None Include="processeddatasets\HU_edges.csv" />
     <None Include="processeddatasets\pubmed_feat.bin" />
     <None Include="processeddatasets\RO_edges.csv" />
+    <None Include="README.md" />
     <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
