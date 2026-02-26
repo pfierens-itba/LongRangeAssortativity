@@ -30,9 +30,6 @@
     <ClCompile Include="src\nullmodels.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\parsepubmed.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -67,13 +64,19 @@
     <None Include="processeddatasets\deezer-feat-RO.bin">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="processeddatasets\HR_edges.csv" />
-    <None Include="processeddatasets\HU_edges.csv" />
     <None Include="processeddatasets\pubmed_feat.bin">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="processeddatasets\RO_edges.csv" />
     <None Include="README.md" />
+    <None Include="processeddatasets\HR_edges.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="processeddatasets\HU_edges.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="processeddatasets\RO_edges.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\assortativitycalc.hpp">
@@ -111,7 +114,18 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="processeddatasets\cora_edges.txt" />
-    <Text Include="processeddatasets\pubmed_edges.txt" />
+    <Text Include="processeddatasets\cora_edges.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="processeddatasets\pubmed_edges.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="sampleresults\cora_simil-1000-redo.txt" />
+    <Text Include="sampleresults\deezer_simil-HR-1000-redo.txt" />
+    <Text Include="sampleresults\deezer_simil-HU-1000-redo.txt" />
+    <Text Include="sampleresults\deezer_simil-RO-1000-redo.txt" />
+    <Text Include="sampleresults\pubmed_simil-1000-redo.txt" />
+    <Text Include="requirements.txt" />
+    <Text Include="LICENSE.txt" />
   </ItemGroup>
 </Project>

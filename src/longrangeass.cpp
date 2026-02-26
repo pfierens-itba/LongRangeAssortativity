@@ -25,7 +25,7 @@ int main(void) {
     igraph_integer_t N;
     igraph_integer_t M;
     double** simMatrix;
-    int nRandom = 1;
+    int nRandom = 1000;
 
     parse(&graph, simMatrix, sizeof(featcora), cacheSimilarityCora, "./processeddatasets/cora_edges.txt", "./processeddatasets/cora_feat.bin");
     N = igraph_vcount(&graph);
