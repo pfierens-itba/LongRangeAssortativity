@@ -137,6 +137,7 @@
     <ClCompile Include="src\longrangeass.cpp" />
     <ClCompile Include="src\memorygeneric.cpp" />
     <ClCompile Include="src\nullmodels.cpp" />
+    <ClCompile Include="src\parsepubmed.cpp" />
     <ClCompile Include="src\parser.cpp" />
     <ClCompile Include="src\similarity.cpp" />
     <ClCompile Include="src\similaritycora.cpp" />
